@@ -22,6 +22,7 @@ void add(List* list, Subdivision value) {
 
 	if (list->root->value.number > value.number) {
 		Node node = { value, 0, list->root };
+		list->root->prev = &node;
 		list->root = &node;
 		return;
 	}
